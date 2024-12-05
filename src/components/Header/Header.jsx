@@ -52,9 +52,10 @@ export const Header = () => {
                                 cx="50%"
                                 cy="50%"
                                 dataKey="value"
-                                outerRadius={80}
+                                outerRadius={100}
                                 labelLine={false}
                                 label={renderCustomizedLabel}
+                                strokeWidth={0}
                             >
                                 {data.map((entry, index) => {
                                     return <Cell key={`cell-${index}`} fill={entry.color} />
