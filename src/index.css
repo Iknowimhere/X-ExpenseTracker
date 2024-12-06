@@ -4,13 +4,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {
   width: 100%;
   overflow: hidden;
   height: 100vh;
-  background-color: #3B3B3B;
+  background-color: #3b3b3b;
   color: #fff;
+  padding: 1em;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+  }
 }
