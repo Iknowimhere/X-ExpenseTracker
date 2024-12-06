@@ -1,5 +1,5 @@
 import { Header } from "./components/Header/Header"
-import { Main } from "./components/Main"
+import { Main } from "./components/Transaction/Transaction"
 
 
 function App() {
