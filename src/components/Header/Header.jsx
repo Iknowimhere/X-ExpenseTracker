@@ -10,8 +10,27 @@ import {
 } from 'recharts';
 
 import { useState } from 'react';
+import { AddIncomeModal } from '../Modal/AddIncomeModal';
+import { AddExpenseModal } from '../Modal/AddExpenseModal';
 
 export const Header = () => {
+  const [isIncomeModalOpen, setIsIncomeModalOpen] = useState(false);
+  const [isExpenseModalOpen, setIsExpenseModalOpen] = useState(false);
+
+  const openIncomeModal = () => {
+    setIsIncomeModalOpen(true);
+  };
+  const closeIncomeModal = () => {
+    setIsIncomeModalOpen(false);
+  };
+  const openExpenseModal = () => {
+    setIsExpenseModalOpen(true);
+  };
+  const closeExpenseModal = () => {
+    setIsExpenseModalOpen(false);
+  };
+
+
   const data = [
     { name: 'Food', value: 120, color: '#FF6384' },
     { name: 'Transport', value: 150, color: '#36A2EB' },
@@ -57,10 +76,11 @@ export const Header = () => {
           </p>
           <button
             className='add-income-btn'
-            onClick={() => openModal('income')}
+            onClick={() => openIncomeModal()}
           >
             Add Income
           </button>
+          <AddIncomeModal isOpen={isIncomeModalOpen} onClose={closeIncomeModal} />
         </div>
         {/* Expenses */}
         <div className='stats-card'>
@@ -69,10 +89,11 @@ export const Header = () => {
           </p>
           <button
             className='add-expense-btn'
-            onClick={() => openModal('expense')}
+            onClick={openExpenseModal}
           >
             Add Expense
           </button>
+          <AddExpenseModal isOpen={isExpenseModalOpen} onClose={closeExpenseModal} />
         </div>
         {/* pie chart */}
         <div className='pie-chart-container'>

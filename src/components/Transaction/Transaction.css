@@ -91,7 +91,7 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 .top-expenses-container {
-  /* width: 100%; */
+  width: 40%;
 }
 .top-expenses-container h1 {
   font-style: italic;

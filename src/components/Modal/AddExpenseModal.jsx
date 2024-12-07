@@ -1,9 +1,9 @@
 import Modal from 'react-modal';
-import './AddIncomeModal.css';
+import './AddExpenseModal.css';
 
 Modal.setAppElement('#root');
 
-export const AddIncomeModal = ({ isOpen, onClose }) => {
+export const AddExpenseModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your form submission logic here
@@ -21,9 +21,14 @@ export const AddIncomeModal = ({ isOpen, onClose }) => {
       </div>
       <div className='modal-body'>
         <form onSubmit={handleSubmit}>
-          <input type="number" placeholder='Income Amount' required />
+          <div className="input-group">
+            <input type="text" placeholder='Title' />
+            <input type="text" placeholder='Price' />
+            <input type="text" placeholder='category' />
+            <input type="text" placeholder='dd/mm//yy' />
+          </div>
           <div className="button-group">
-            <button type="submit" className='income-btn'>Add Income</button>
+            <button type="submit" className='expense-btn'>Add Expense</button>
             <button type="button" className='cancel-btn' onClick={onClose}>Cancel</button>
           </div>
         </form>
