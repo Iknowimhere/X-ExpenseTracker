@@ -11,6 +11,10 @@
     width: 60%;
     align-items: start;
 }
+.recent-transactions-container h1 {
+    /* margin-bottom: 1em; */
+    font-style: italic;
+}
 
 .recent-transactions {
     background-color: #fff;
