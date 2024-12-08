@@ -25,6 +25,8 @@ const getCategoryIcon = (category) => {
 
 const TransactionItem = ({ expense, onEdit, onDelete }) => {
   const { enqueueSnackbar } = useSnackbar();
+  console.log(expense);
+  
 
   const handleDelete = () => {
     onDelete(expense);
@@ -39,7 +41,11 @@ const TransactionItem = ({ expense, onEdit, onDelete }) => {
         </div>
         <div className='section-content'>
           <p>{expense.title}</p>
-          <p className='date'>{new Date(expense.date).toLocaleDateString()}</p>
+          <p className='date'>{new Date(expense.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}</p>
         </div>
       </div>
       <div className='section2'>
@@ -60,21 +66,21 @@ export const Main = () => {
   const [editingExpense, setEditingExpense] = useState(null);
 
 
-    // Add pagination states
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3;
-  
+  // Add pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
 
-      // Calculate pagination values
+
+  // Calculate pagination values
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = expenses.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(expenses.length / itemsPerPage);
 
- // Pagination controls
- const handlePageChange = (pageNumber) => {
-  setCurrentPage(pageNumber);
-};
+  // Pagination controls
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
 
   const handleEdit = (expense) => {
@@ -100,18 +106,18 @@ export const Main = () => {
               <p className="no-expenses">No expenses to show</p>
             )}
           </div>
-          
+
           {/* Add Pagination Controls */}
           {expenses.length > itemsPerPage && (
             <div className="pagination">
-              <button 
+              <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
                 className="pagination-btn"
               >
                 Previous
               </button>
-              
+
               {[...Array(totalPages)].map((_, index) => (
                 <button
                   key={index + 1}
@@ -121,7 +127,7 @@ export const Main = () => {
                   {index + 1}
                 </button>
               ))}
-              
+
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
@@ -136,7 +142,9 @@ export const Main = () => {
 
       <div className='top-expenses-container'>
         <h1>Top Expenses</h1>
+        <div className="top-expenses">
         <TopExpenses />
+        </div>
       </div>
 
       {editingExpense && (

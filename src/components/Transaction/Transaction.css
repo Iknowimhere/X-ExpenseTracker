@@ -1,8 +1,10 @@
 /* Container Layout */
 .transaction-container {
   display: flex;
-  gap: 2rem;
-  padding: 1rem;
+  gap: 1rem;
+  margin-top: 1em;
+  /* padding: 1rem; */
+  /* height: calc(100vh - 80px); */
 }
 
 .recent-transactions-container {
@@ -10,21 +12,15 @@
   min-width: 0;
 }
 
-.top-expenses-container {
-  flex: 2;
-  min-width: 300px;
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+
 
 /* Transaction List Styling */
 .recent-transactions {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* height: calc(100% - 60px); */
 }
 
 .list {
@@ -37,13 +33,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 8px;
-  transition: background-color 0.2s;
 }
 
-.list-item:hover {
-  background-color: #f8f9fa;
+
+.section-content {
+  color: black;
 }
 
 /* Transaction Item Components */
@@ -53,6 +49,7 @@
   gap: 1rem;
 }
 
+
 .category-icon {
   display: flex;
   align-items: center;
@@ -60,7 +57,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background-color: #ddd;
   color: #666;
 }
 
@@ -128,8 +125,9 @@
 .transaction-title,
 .top-expenses-container h1 {
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: #fff;
   font-size: 1.5rem;
+  font-style: italic;
 }
 
 /* Responsive Design */
@@ -137,31 +135,37 @@
   .transaction-container {
     flex-direction: column;
   }
-  
-  .top-expenses-container {
+
+  .top-expenses {
     width: 100%;
   }
 }
 
-/* Bar Chart Container */
 .top-expenses {
-  height: 300px;
-  width: 100%;
-  margin-top: 1rem;
+  flex: 2;
+  /* min-width: 300px; */
+  background: white;
+  border-radius: 8px;
+  /* padding: 1.5rem; */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* height: 100%; */
 }
 
-/* Chart Tooltips */
+
+
+
 .recharts-tooltip-wrapper {
   background: white;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .loading {
   text-align: center;
   padding: 1rem;
   color: #666;
 }
-/* Add these styles to your existing CSS */
+
 
 .pagination {
   display: flex;
@@ -169,7 +173,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-top: 1rem;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
 }
 
 .pagination-btn {
