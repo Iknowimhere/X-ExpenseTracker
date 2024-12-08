@@ -11,6 +11,7 @@ import { useSnackbar } from 'notistack';
 import { useExpense } from '../../context/ExpenseContext';
 import { AddIncomeModal } from '../Modal/AddIncomeModal';
 import { AddExpenseModal } from '../Modal/AddExpenseModal';
+import { IoIosAdd } from "react-icons/io";
 
 export const Header = () => {
   const { walletBalance, expenses } = useExpense();
@@ -96,7 +97,7 @@ export const Header = () => {
             className='add-income-btn'
             onClick={() => handleModalOpen('income')}
           >
-            Add Income
+           <IoIosAdd/> Add Income
           </button>
           <AddIncomeModal 
             isOpen={isIncomeModalOpen} 
@@ -111,7 +112,7 @@ export const Header = () => {
             className='add-expense-btn'
             onClick={() => handleModalOpen('expense')}
           >
-            Add Expense
+           <IoIosAdd /> Add Expense
           </button>
           <AddExpenseModal 
             isOpen={isExpenseModalOpen} 
