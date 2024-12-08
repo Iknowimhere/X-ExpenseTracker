@@ -1,98 +1,197 @@
+/* Container Layout */
 .transaction-container {
   display: flex;
-  /* justify-content: space-around; */
-  gap: 2em;
-  margin-top: 1em;
-  align-items: center;
-}
-.recent-transactions-container {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-}
-.recent-transactions-container h1 {
-    /* margin-bottom: 1em; */
-    font-style: italic;
+  gap: 2rem;
+  padding: 1rem;
 }
 
-.recent-transactions {
-  background-color: #fff;
-  border-radius: 1em;
-  color: black;
-  padding: 0.5em;
-  width: 100%;
+.recent-transactions-container {
+  flex: 3;
+  min-width: 0;
 }
-.transaction-title {
-  font-style: italic;
+
+.top-expenses-container {
+  flex: 2;
+  min-width: 300px;
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Transaction List Styling */
+.recent-transactions {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  padding: 0.5em;
+  gap: 1rem;
 }
 
 .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1em; */
-  border-radius: 0.5em;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
 }
 
+.list-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Transaction Item Components */
 .section1 {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
 }
 
-.section1 img {
-  width: 50px;
-  height: 50px;
-  padding: 0.5em;
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: #f0f0f0;
+  color: #666;
 }
 
-.section1 .section-content {
+.section-content {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 }
 
-.section-content p:nth-child(1) {
-  font-size: 1.2em;
-  margin-bottom: 0.2em;
+.section-content p:first-child {
+  font-weight: 500;
 }
 
-.section-content p:nth-child(2) {
-  font-size: 1em;
-  color: #999;
+.date {
+  font-size: 0.875rem;
+  color: #666;
 }
 
 .section2 {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
 }
 
+.amount {
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Action Buttons */
 .action-btn {
-  padding: 0.5em 1em;
+  background: none;
   border: none;
-  border-radius: 0.5em;
-  background-color: #36a2eb;
-  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.top-expenses {
-  background-color: #fff;
-  border-radius: 1em;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+.action-btn.edit {
+  color: #36A2EB;
 }
-.top-expenses-container {
-  width: 40%;
+
+.action-btn.delete {
+  color: #FF6384;
 }
-.top-expenses-container h1 {
+
+.action-btn:hover {
+  transform: scale(1.1);
+  background-color: #f8f9fa;
+}
+
+/* Empty States */
+.no-expenses,
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
   font-style: italic;
+}
+
+/* Titles */
+.transaction-title,
+.top-expenses-container h1 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transaction-container {
+    flex-direction: column;
+  }
+  
+  .top-expenses-container {
+    width: 100%;
+  }
+}
+
+/* Bar Chart Container */
+.top-expenses {
+  height: 300px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Chart Tooltips */
+.recharts-tooltip-wrapper {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.loading {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+}
+/* Add these styles to your existing CSS */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+.pagination-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.pagination-btn.active {
+  background: #36A2EB;
+  color: white;
+  border-color: #36A2EB;
+}
+
+.pagination-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

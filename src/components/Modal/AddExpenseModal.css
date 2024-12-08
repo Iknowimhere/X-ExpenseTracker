@@ -32,6 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+  /* width: 100%; */
   /* flex-direction: column; */
 }
 
@@ -39,6 +40,7 @@
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  width: 100%;
 }
 
 .button-group {
@@ -51,6 +53,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  flex: 1;
 }
 
 .expense-btn {
@@ -60,4 +63,11 @@
 
 .cancel-btn {
   background-color: #ddd;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
 }
