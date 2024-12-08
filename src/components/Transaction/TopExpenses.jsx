@@ -52,7 +52,6 @@ export const TopExpenses = () => {
           data={data}
           margin={{ left: 50, right: 50, top: 20, bottom: 20 }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
           <XAxis type='number' />
           <YAxis 
             dataKey='name' 

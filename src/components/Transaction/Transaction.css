@@ -17,13 +17,12 @@
 }
 
 
-/* Transaction List Styling */
+
 .recent-transactions {
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* height: calc(100% - 60px); */
 }
 
 .list {
@@ -68,11 +67,13 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  color: black;
+}
+.section-content p:first-child {
+  text-transform: capitalize;
 }
 
-.section-content p:first-child {
-  font-weight: 500;
-}
+
 
 .date {
   font-size: 0.875rem;
@@ -99,23 +100,20 @@
   padding: 0.5rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .action-btn.edit {
-  color: #36A2EB;
+  color: #fff;
+  background-color: orangered;
 }
 
 .action-btn.delete {
-  color: #FF6384;
+  color: #fff;
+  background-color: red;
 }
 
-.action-btn:hover {
-  transform: scale(1.1);
-  background-color: #f8f9fa;
-}
 
-/* Empty States */
+
 .no-expenses,
 .no-data {
   text-align: center;
@@ -133,7 +131,8 @@
   font-style: italic;
 }
 
-/* Responsive Design */
+
+
 @media (max-width: 1024px) {
   .transaction-container {
     flex-direction: column;
@@ -146,12 +145,9 @@
 
 .top-expenses {
   flex: 2;
-  /* min-width: 300px; */
   background: white;
   border-radius: 8px;
-  /* padding: 1.5rem; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  /* height: 100%; */
 }
 
 
