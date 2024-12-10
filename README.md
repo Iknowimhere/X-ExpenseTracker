@@ -1,7 +1,4 @@
 
-
-Based on the provided code snippets, I'll generate a README content for your Expense Tracker application. Here it is:
-
 ```markdown
 # Expense Tracker
 ================
@@ -55,5 +52,3 @@ The application uses React Icons for icons.
 
 This project is licensed under the MIT License.
 ```
-
-Feel free to modify it as needed to fit your specific use case.
