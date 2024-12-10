@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { enqueueSnackbar } from 'notistack';
 
 const ExpenseContext = createContext();
 
@@ -22,7 +23,14 @@ export const ExpenseProvider = ({ children }) => {
 
   const addExpense = (expense) => {
     if (expense.amount > walletBalance) {
-      alert('Insufficient balance!');
+      enqueueSnackbar('Insufficient balance!', {
+        variant: 'error',
+        autoHideDuration: 3000,
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'right',
+        }
+      });
       return false;
     }
     setExpenses(prev => [...prev, { ...expense, id: Date.now() }]);
